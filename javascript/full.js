@@ -47,7 +47,8 @@ function Present() {
                             .css('right', '40px')
 
     $('.section').each( function(){
-      $(this).clone().appendTo( $(pres) );
+      $(this).clone().wrapInner( "<div class='container'></div>")
+                     .appendTo( $(pres) );
     })
 
 
