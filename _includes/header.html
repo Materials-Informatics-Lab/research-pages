@@ -1,9 +1,14 @@
 <header id="controls">
 <div class="dropdown" style="float:right">
   <div class="btn-group">
+
   <button class="btn btn-default" type="button" >
     <a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/assets/III-icon.png" style="border:0;" ></a>
   </button>
+
+  <div class="btn btn-default" style="height:54px;" title="Move">
+    <a><span class="glyphicon glyphicon-move" style="padding-top:12px;"> </span></a>
+  </div>
 
 {% if page.path != 'index.html' %}
 <button class="btn btn-default" type="button" style="height:54px;">
@@ -19,10 +24,6 @@
 <button class="btn btn-default" type="button" style="height:54px;">
 <a id="fp-start" onclick="fullpageinit();" title="Presentation Mode">
   <span class="octicon octicon-gift"></span></a>
-</button>
-
-<button class="btn btn-default" type="button" style="height:54px;" data-toggle="modal" data-target="#jsonModal">
-<span class="octicon octicon-file-binary"></span>
 </button>
 
 {% else %}
@@ -65,4 +66,6 @@
 </div>
 </header>
 
-{% include jsonmodal.html %}
+<script>
+$('#controls').draggable()
+</script>

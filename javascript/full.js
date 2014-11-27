@@ -20,8 +20,14 @@ function Wrap_H_Section(){
     var sec = $(this).prev()
 
       $(sec).nextAll().each( function(i,d){
-          if ( HeaderOrder( $(this) ) > toprank || i == 0 ){
-            $(this).appendTo( $(sec) );
+          if ( HeaderOrder( $(this) ) > toprank ||
+             i == 0 )  {
+
+               if ( $(this).hasClass('section') ){
+                 return false;
+                } else {
+                 $(this).appendTo( $(sec) );
+                }
           } else {
               return false;
           }
@@ -35,6 +41,8 @@ function Wrap_H_Section(){
 
 function Present() {
 
+    // Fix any rembedding plo
+    ArrangeBootStrap();
     // Add fullpage element to the top of the body
     $('body').prepend('<div id="fullpage"></div>')
     var pres = $('#fullpage');
@@ -45,12 +53,12 @@ function Present() {
                             .css('z-index','10')
                             .css('top', '40px')
                             .css('right', '40px')
+                            .draggable()
 
     $('.section').each( function(){
-      $(this).clone().wrapInner( "<div class='container'></div>")
+      $(this).wrapInner( "<div class='container'></div>")
                      .appendTo( $(pres) );
     })
-
 
     $('#fullpage').fullpage({
            normalScrollElements: '#controls, iframe'
@@ -68,10 +76,17 @@ function fullpageinit(){
 
 // Initialize slides
 $(document).ready( function (){
-  if ($('.section').length == 0){
-      $('.post header').children().wrapAll("<div class='section'></div>");
+  //if ($('.section').length == 0){
+    $('.post header').children().wrapAll("<div class='section'></div>");
     Wrap_H_Section();
-}
+
+    // Clean up weird empty .section divs
+    $(".section").each( function(){
+      if ( $(this).html().length == 0){
+        $(this).remove();
+      }
+    });
+//}
 });
 
 

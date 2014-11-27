@@ -1,0 +1,23 @@
+---
+layout: post
+title: Interactive Reduced Embeddings
+
+file: "/research-pages/assets/data/embedding.json"
+file2: "/research-pages/assets/data/embedding2.json"
+---
+
+
+{% assign file={{page.file}} %}
+{% include rembedder.html file=file %}
+
+
+## Some section explaining code
+
+{% highlight javascript %}
+function WhatsTheAnswer(){
+  return parseInt('42');
+{% endhighlight %}
+
+
+{% assign file={{page.file2}} %}
+{% include rembedder.html file=file %}
