@@ -50,6 +50,7 @@ references:
 - http://alvarotrigo.com/fullPage/
 - https://github.com/knsv/mermaid #9
 - http://bl.ocks.org/tonyfast/b77d1cb766f65f026c67
+- http://nbviewer.ipython.org/gist/tonyfast/242af9bda2517a9179c0 #11
 ---
 
 {% assign ref=page.references %}
@@ -160,6 +161,9 @@ function WhatsTheAnswer(){
   return parseInt('42');
 {% endhighlight %}
 
+## Using Posts as Code
+
+<iframe src="{{ref[11]}}" width="100%" height="475px"></iframe>
 
 {% assign file={{page.file2}} %}
 {% include rembedder.html file=file %}
