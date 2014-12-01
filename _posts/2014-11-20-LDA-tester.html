@@ -17,6 +17,8 @@ js:
   url: http://jquery.com/ #3
 - name: D3
   url: http://d3js.org #4
+- name: Mermaid
+  url: https://github.com/knsv/mermaid #5
 
 css:
 - name: Bootstrap
@@ -46,6 +48,7 @@ references:
 - http://www.mathjax.org/
 - https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
 - http://alvarotrigo.com/fullPage/
+- https://github.com/knsv/mermaid #9
 ---
 
 {% assign ref=page.references %}
@@ -122,6 +125,24 @@ The complete set of tools used on this page is listed below.
 {% endfor %}
 </table>
 
+# A Chart
+
+Easily create graphs using simple [Mermaid]({{ref[9]}})'s simple syntax.
+<style>
+.mermaid div{ color: black; }
+</style>
+
+<div class="mermaid">
+  graph LR;
+    A[Physics Based Model]-->B(Feature Identification);
+    B-->C(Feature Encoding);
+    B-->b1((segmentation));
+    C-->D(Data Analytics);
+    C-->c1((spatial statistics));
+    D-->|collaborate|E{Design};
+    D-->d1((PCA));
+    E-->|iterate|A;
+</div>
 # All the Jazz
 
 
