@@ -49,6 +49,7 @@ references:
 - https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
 - http://alvarotrigo.com/fullPage/
 - https://github.com/knsv/mermaid #9
+- http://bl.ocks.org/tonyfast/b77d1cb766f65f026c67
 ---
 
 {% assign ref=page.references %}
@@ -125,9 +126,13 @@ The complete set of tools used on this page is listed below.
 {% endfor %}
 </table>
 
+# All the Jazz
+
 # A Chart
 
-Easily create graphs using simple [Mermaid]({{ref[9]}})'s simple syntax.
+Easily create graphs using simple [Mermaid]({{ref[9]}})'s simple syntax.  There is a [bl.ocks.org]({{ref[10]}}) page that can
+be used to explore Mermaid easily.
+
 <style>
 .mermaid div{ color: black; }
 </style>
@@ -143,8 +148,6 @@ Easily create graphs using simple [Mermaid]({{ref[9]}})'s simple syntax.
     D-->d1((PCA));
     E-->|iterate|A;
 </div>
-
-# All the Jazz
 
 {% assign file={{page.file}} %}
 {% include rembedder.html file=file %}
