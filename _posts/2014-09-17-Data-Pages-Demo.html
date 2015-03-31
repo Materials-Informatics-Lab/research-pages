@@ -8,14 +8,14 @@ ydatafile: "yexample" # filename for yaml file
 jdatafile: "jexample" # filename for json file
 
 references:
-- http://jekyllrb.com/docs/datafiles/
-- https://github.com/Materials-Informatics-Lab/research-pages/blob/gh-pages/_data/yexample.yaml
-- https://github.com/Materials-Informatics-Lab/research-pages/blob/gh-pages/_data/jexample.json
+  datafiles: http://jekyllrb.com/docs/datafiles/
+  yexample: https://github.com/Materials-Informatics-Lab/research-pages/blob/gh-pages/_data/yexample.yaml
+  jexample: https://github.com/Materials-Informatics-Lab/research-pages/blob/gh-pages/_data/jexample.json
 ---
 
 # Using Data Files in Posts
 
-[Data Files in Jekyll]({{page.references[0]}}) provide site-wide access
+[Data Files in Jekyll]({{page.references['datafiles']}}) provide site-wide access
 to ``yaml`` and ``json`` files stored in the ``_data`` folder on your Github Pages branch.
 
 # How to Data Files Work.
@@ -31,7 +31,7 @@ to ``yaml`` and ``json`` files stored in the ``_data`` folder on your Github Pag
 
 # Demo ``_data/yexample.yaml``
 
-In this case, the file is [``_data/yexample.yaml``]({{page.references[1]}}) and can be accessed with the
+In this case, the file is [``_data/yexample.yaml``]({{page.references['yexample']}}) and can be accessed with the
 syntax ``{% raw %}{{site.data['yexample']}}{% endraw %}``
 
 **YAML Site Data**
@@ -46,7 +46,7 @@ syntax ``{% raw %}{{site.data['yexample']}}{% endraw %}``
 
 # Demo ``_data/jexample.json``
 
-In this case, the file is [``_data/jexample.json``]({{page.references[2]}}) and can be accessed with the
+In this case, the file is [``_data/jexample.json``]({{page.references['jexample']}}) and can be accessed with the
 syntax ``{% raw %}{{site.data['jexample']}}{% endraw %}``
 
 **JSON Site Data**
