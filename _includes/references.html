@@ -3,7 +3,11 @@
 ## References
 
 {% for refs in page.references %}
-* [{{refs}}]({{refs}})
+  {% if refs[1] %} <!-- is object -->
+    1. [{{refs[1]}}]({{refs[1]}})
+  {% else %} <!-- is array -->
+    * [{{refs}}]({{refs}})
+  {% endif %}
 {% endfor %}
 {% endcapture %}
 
